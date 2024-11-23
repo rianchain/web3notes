@@ -58,10 +58,10 @@ function App() {
       setIsLoading(true);
       const allNotes = await notesContract.getAllNotes();
       const formattedNotes = allNotes.ids.map((id, index) => ({
-        id: id.toNumber(),
+        id: Number(id),
         content: allNotes.contents[index],
-        createdAt: allNotes.createdAts[index].toNumber(),
-        updatedAt: allNotes.updatedAts[index].toNumber(),
+        createdAt: Number(allNotes.createdAts[index]),
+        updatedAt: Number(allNotes.updatedAts[index]),
         isDeleted: allNotes.isDeleteds[index]
       }));
       setNotes(formattedNotes.filter(note => !note.isDeleted));

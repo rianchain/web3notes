@@ -43,11 +43,13 @@
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  width: 90%;
+  box-sizing: border-box;
 }
 
 header {
@@ -64,24 +66,40 @@ header {
 
 .notes-input {
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 textarea {
-  width: 100%;
-  min-height: 100px;
+  width: 90%;
+  height: 120px;
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
-  padding: 12px;
+  padding: 1rem;
   color: white;
   font-size: 1rem;
   margin-bottom: 1rem;
-  resize: vertical;
+  resize: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  line-height: 1.5;
 }
 
 textarea:focus {
   outline: none;
   border-color: #805ad5;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
 }
 
 button {
@@ -93,7 +111,7 @@ button {
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
-  margin: 0 5px;
+  min-width: 120px;
 }
 
 button:hover {
@@ -111,6 +129,8 @@ button:disabled {
   padding: 1rem;
   border-radius: 8px;
   margin-bottom: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .note-content {
@@ -134,6 +154,9 @@ button:disabled {
 
 .edit-note {
   width: 100%;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
 }
 
 .edit-actions {
@@ -144,11 +167,25 @@ button:disabled {
 }
 
 .error-message {
-  background: rgba(245, 101, 101, 0.1);
+  background: rgba(245, 101, 101, 0.2);
   color: #f56565;
   padding: 1rem;
   border-radius: 8px;
-  margin: 1rem 0;
+  margin: 1rem auto;
+  max-width: 90%;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .loading-overlay {
@@ -157,11 +194,115 @@ button:disabled {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   font-size: 1.2rem;
   z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+@media screen and (max-width: 768px) {
+  .App {
+    padding: 1rem;
+  }
+
+  .container {
+    width: 100%;
+    padding: 1rem;
+    margin: 0 auto;
+  }
+
+  .notes-input {
+    padding: 0;
+    width: 100%;
+  }
+
+  textarea {
+    width: 100%;
+    height: 100px;
+    margin: 0 0 1rem 0;
+  }
+
+  .button-container {
+    width: 100%;
+    padding: 0;
+  }
+
+  .note-card {
+    width: 100%;
+    margin: 0 0 1rem 0;
+    padding: 0.8rem;
+  }
+
+  .edit-note {
+    width: 100%;
+    padding: 0;
+  }
+
+  .edit-note textarea {
+    width: 100%;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .note-metadata,
+  .note-actions,
+  .edit-actions {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .App {
+    padding: 0.5rem;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 10px;
+  }
+
+  .notes-input {
+    margin-bottom: 1.5rem;
+  }
+
+  textarea {
+    height: 90px;
+    padding: 0.7rem;
+  }
+
+  .note-card {
+    padding: 0.7rem;
+    margin-bottom: 0.8rem;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .note-actions button,
+  .edit-actions button {
+    width: calc(50% - 0.25rem);
+  }
+}
+
+.edit-note textarea {
+  width: 100%;
+  height: 120px;
+  margin-bottom: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.notes-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
 }
