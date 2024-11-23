@@ -23,8 +23,8 @@ contract Notes {
 
     // Modifier untuk memastikan note exists dan dimiliki oleh sender
     modifier onlyNoteOwner(uint256 _noteId) {
-        require(_noteId < userNotes[msg.sender].length, "Note does not exist");
-        require(!userNotes[msg.sender][_noteId].isDeleted, "Note has been deleted");
+        require(_noteId < userNotes[msg.sender].length, "Catatan tidak ada!");
+        require(!userNotes[msg.sender][_noteId].isDeleted, "Catatan telah di hapus.");
         _;
     }
 
@@ -82,7 +82,7 @@ contract Notes {
             bool isDeleted
         ) 
     {
-        require(_noteId < userNotes[msg.sender].length, "Note does not exist");
+        require(_noteId < userNotes[msg.sender].length, "Catatan tidak ada!");
         Note memory note = userNotes[msg.sender][_noteId];
         return (
             note.content,
