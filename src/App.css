@@ -64,6 +64,12 @@ header {
   margin: 1rem 200px;
 }
 
+.wallet-info p {
+  color: white;
+  margin: 0px 280px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
 .notes-input {
   margin-bottom: 2rem;
   display: flex;
@@ -253,11 +259,17 @@ button:disabled {
   }
 
   .wallet-info {
-    background: rgba(255, 255, 255, 0.1);
+    background: transparent;
     padding: -20px;
     border-radius: 40px;
     margin: 1rem 0;
     margin-top: 40px;
+  }
+
+  .wallet-info p {
+    color: white;
+    margin: 0px 0px;
+    background: transparent;
   }
 
   .container {
@@ -364,4 +376,10 @@ button:disabled {
   padding: -20px;
   border-radius: 40px;
   margin: 1rem 0;
+}
+
+.wallet-info p {
+  color: white;
+  margin: 0px 0px;
+  background: transparent;
 }
