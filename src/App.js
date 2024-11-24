@@ -140,7 +140,7 @@ function App() {
       <div className="App">
         <div className="container">
           <header>
-            <h1>Web3 Notes</h1>
+            <h1>Notes.io</h1>
             {walletAddress && (
               <div className="wallet-info">
                 <p>Address: {formatAddress(walletAddress)}</p>
