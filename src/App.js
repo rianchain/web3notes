@@ -3,6 +3,15 @@ import { ethers, formatEther } from 'ethers';
 import contractABI from './contract_abi.json';
 import './App.css';
 
+const LoadingOverlay = ({ message }) => {
+  return (
+    <div className="loading-overlay">
+      <div className="loading-spinner"></div>
+      <div className="loading-text">{message || 'Processing transaction...'}</div>
+    </div>
+  );
+};
+
 function App() {
   const [walletAddress, setWalletAddress] = useState('');
   const [balance, setBalance] = useState(null);
@@ -126,68 +135,69 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <div className="container">
-        <header>
-          <h1>Web3 Notes</h1>
-          {walletAddress && (
-            <div className="wallet-info">
-              <p>Address: {formatAddress(walletAddress)}</p>
-              <p>Balance: {balance ? `${Number(balance).toFixed(4)} ETH` : '...'}</p>
-            </div>
-          )}
-        </header>
+    <>
+      {isLoading && <LoadingOverlay message="Processing transaction..." />}
+      <div className="App">
+        <div className="container">
+          <header>
+            <h1>Web3 Notes</h1>
+            {walletAddress && (
+              <div className="wallet-info">
+                <p>Address: {formatAddress(walletAddress)}</p>
+                <p>Balance: {balance ? `${Number(balance).toFixed(4)} ETH` : '...'}</p>
+              </div>
+            )}
+          </header>
 
-        {error && <div className="error-message">{error}</div>}
+          {error && <div className="error-message">{error}</div>}
 
-        <div className="notes-input">
-          <textarea
-            value={newNote}
-            onChange={(e) => setNewNote(e.target.value)}
-            placeholder="Write your note here..."
-            disabled={isLoading}
-          />
-          <button onClick={createNote} disabled={isLoading || !newNote.trim()}>
-            Add Note
-          </button>
+          <div className="notes-input">
+            <textarea
+              value={newNote}
+              onChange={(e) => setNewNote(e.target.value)}
+              placeholder="Write your note here..."
+              disabled={isLoading}
+            />
+            <button onClick={createNote} disabled={isLoading || !newNote.trim()}>
+              Add Note
+            </button>
+          </div>
+
+          <div className="notes-list">
+            {notes.map((note) => (
+              <div key={note.id} className="note-card">
+                {editingNote.id === note.id ? (
+                  <div className="edit-note">
+                    <textarea
+                      value={editingNote.content}
+                      onChange={(e) => setEditingNote({ ...editingNote, content: e.target.value })}
+                    />
+                    <div className="edit-actions">
+                      <button onClick={() => updateNote(note.id)}>Save</button>
+                      <button onClick={() => setEditingNote({ id: null, content: '' })}>Cancel</button>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <p className="note-content">{note.content}</p>
+                    <div className="note-metadata">
+                      <small>Created: {formatDate(note.createdAt)}</small>
+                      <small>Updated: {formatDate(note.updatedAt)}</small>
+                    </div>
+                    <div className="note-actions">
+                      <button onClick={() => setEditingNote({ id: note.id, content: note.content })}>
+                        Edit
+                      </button>
+                      <button onClick={() => deleteNote(note.id)}>Delete</button>
+                    </div>
+                  </>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
-
-        <div className="notes-list">
-          {notes.map((note) => (
-            <div key={note.id} className="note-card">
-              {editingNote.id === note.id ? (
-                <div className="edit-note">
-                  <textarea
-                    value={editingNote.content}
-                    onChange={(e) => setEditingNote({ ...editingNote, content: e.target.value })}
-                  />
-                  <div className="edit-actions">
-                    <button onClick={() => updateNote(note.id)}>Save</button>
-                    <button onClick={() => setEditingNote({ id: null, content: '' })}>Cancel</button>
-                  </div>
-                </div>
-              ) : (
-                <>
-                  <p className="note-content">{note.content}</p>
-                  <div className="note-metadata">
-                    <small>Created: {formatDate(note.createdAt)}</small>
-                    <small>Updated: {formatDate(note.updatedAt)}</small>
-                  </div>
-                  <div className="note-actions">
-                    <button onClick={() => setEditingNote({ id: note.id, content: note.content })}>
-                      Edit
-                    </button>
-                    <button onClick={() => deleteNote(note.id)}>Delete</button>
-                  </div>
-                </>
-              )}
-            </div>
-          ))}
-        </div>
-
-        {isLoading && <div className="loading-overlay">Processing...</div>}
       </div>
-    </div>
+    </>
   );
 }
 
