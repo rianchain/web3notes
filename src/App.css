@@ -89,9 +89,13 @@ header {
   margin-bottom: 2rem;
 }
 
+.notesio {
+  margin-top: -10px;
+  margin-bottom: 2px;
+}
+
 .etherian {
   color: yellow;
-  background-color: red;
 }
 
 .wallet-info {
