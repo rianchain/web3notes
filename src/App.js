@@ -141,6 +141,7 @@ function App() {
         <div className="container">
           <header>
             <h1>Notes.io📑</h1>
+            <a href='https://github.com/rianchain' className='etherian'>@etheriannn</a>
             {walletAddress && (
               <div className="wallet-info">
                 <p>Address: {formatAddress(walletAddress)}</p>
