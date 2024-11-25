@@ -90,7 +90,8 @@ header {
 }
 
 .etherian {
-  color: red;
+  color: yellow;
+  background-color: red;
 }
 
 .wallet-info {
