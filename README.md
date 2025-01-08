@@ -1,10 +1,21 @@
-# Getting Started with web3notes
+# Web3Notes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Web3Notes is a decentralized application (dApp) that allows users to take notes and store notes into smart contracts using Sepolia's Optimism network. With Web3Notes, you can take unlimited notes of thousands of characters and paragraphs, as well as perform quick transactions to record, edit, modify or delete notes within the blockchain. The app is designed to provide an efficient and transparent solution without the need for additional applications, simply by signing transactions using a MetaMask wallet connected to the Optimism Sepolia network.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Features
+
+- Decentralized Record Keeping: Store your records securely on the blockchain.
+
+- Support for Thousands of Characters and Paragraphs: There is no limit to the number of characters or paragraphs you can store.
+
+- Fast Transactions: Enjoy high transaction speeds thanks to the Optimism network.
+
+- Note Editing and Deletion: Easy to edit or delete saved notes.
+
+- No Additional Apps: Simply use the MetaMask wallet to sign transactions.
+
+- Transparency: All records are stored on the blockchain, so they can be accessed and verified by anyone.
 
 ### `npm start`
 
