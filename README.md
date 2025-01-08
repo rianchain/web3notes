@@ -1,6 +1,6 @@
 # Web3Notes
 
-Web3Notes is a decentralized application (dApp) that allows users to take notes and store notes into smart contracts using Sepolia's Optimism network. With Web3Notes, you can take unlimited notes of thousands of characters and paragraphs, as well as perform quick transactions to record, edit, modify or delete notes within the blockchain. The app is designed to provide an efficient and transparent solution without the need for additional applications, simply by signing transactions using a MetaMask wallet connected to the Optimism Sepolia network.
+Web3Notes is a decentralized application (dApp) that allows users to take notes and store notes into smart contracts using Optimism sepolia network. With Web3Notes, you can take unlimited notes of thousands of characters and paragraphs, as well as perform quick transactions to record, edit, modify or delete notes within the blockchain. The app is designed to provide an efficient and transparent solution without the need for additional applications, simply by signing transactions using a MetaMask wallet connected to the Optimism Sepolia network.
 
 
 ## Features
