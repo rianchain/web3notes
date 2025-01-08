@@ -60,5 +60,8 @@ Edit or Delete Notes:
 
 We highly value contributions from the community. If you would like to contribute to this project, please fork this repository and submit a pull request with your changes.
 
+## License
+
+This project is licensed under the MIT License.
 
 
