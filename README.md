@@ -17,65 +17,48 @@ Web3Notes is a decentralized application (dApp) that allows users to take notes 
 
 - Transparency: All records are stored on the blockchain, so they can be accessed and verified by anyone.
 
-### `npm start`
+## Advantages
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Decentralization: No third party controls your data.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Security: Your data is stored on the blockchain, which offers a high level of security.
 
-### `npm test`
+- User-Friendly: Simple and easy-to-use interface.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Low Transaction Fees: Uses the Optimism Sepolia network 
+which offers lower transaction fees compared to the main Ethereum network.
 
-### `npm run build`
+## Transparency
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+All notes stored on Web3Notes can be accessed and verified by anyone. By using blockchain technology, you can ensure that your notes cannot be changed or deleted without permission. This provides a high level of transparency and trust to users.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### How to use Web3Notes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Install MetaMask: Make sure you have installed the MetaMask wallet in your browser.
 
-### `npm run eject`
+- Change Network to Optimism Sepolia:
+Open MetaMask and select a network.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Add the Optimism Sepolia network if it doesn't already exist.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Access Web3Notes: Visit the https://web3notes.vercel.app app in your browser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Connect Wallet: Click the “Connect Wallet” button and select MetaMask.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Create Notes:
+- Enter your notes in the fields provided.
+Click “Save” to save the note to the blockchain.
 
-## Learn More
+Edit or Delete Notes:
+- Select the note you want to edit or delete.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Click “Edit” to change the note or “Delete” to delete it.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Sign Transaction: MetaMask will ask you to sign the transaction. Click “Confirm” to continue.
 
-### Code Splitting
+## Contributions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+We highly value contributions from the community. If you would like to contribute to this project, please fork this repository and submit a pull request with your changes.
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
